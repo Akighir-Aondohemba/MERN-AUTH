@@ -6,7 +6,7 @@ import authRoutes from './routes/auth.route.js'
 dotenv.config();
 mongoose.connect(process.env.MONGO).then(() => {
  console.log("connected to mongoDB");
-}).catch((err) => {
+}).catch((err) => { 
     console.log(err);
 });
 
@@ -28,6 +28,6 @@ app.use((err, req, res, next) => {
     return res.status(statusCode).json({
         success: false,
         message,
-        statusCode
+        statusCode,
     });
 });
